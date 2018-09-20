@@ -1,0 +1,19 @@
+    <div class="divTable" >
+      <div class="divRow">
+          <div class="divCell" >Skill Importance</div>
+          <div class="divCell">Skill</div>
+      </div>
+
+      <div class="divRow {{rowStyle}}"  *ngFor="let item of items;let i=index"
+      (drop)= 'drop($event)'
+       draggable="true"
+       (dragover)="dragover($event)"
+       (dragstart)="dragstart($event)"
+       (dragleave)="dragleave($event)"
+       (dragexit)="dragexit($event)"
+       id='{{ bag }}_{{ i }}' >
+       <div class="divCell" id='{{ bag }}_{{ i }}_0'  >{{item.id}} </div>    
+       <div class="divCell" id='{{ bag }}_{{ i }}_1'  >{{item.name}} </div> 
+    </div>
+
+   

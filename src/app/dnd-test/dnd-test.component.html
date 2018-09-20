@@ -1,0 +1,16 @@
+<div style='border:5px solid black'> 
+    <div > Smart component here</div>
+    <div *ngFor="let sp of sports_profiles ;let i=index"  style='border:5px solid green; margin:10px'>
+        <div > Arrange skill importance for
+            <b> {{ sp.name }} </b> using list below</div>
+        <app-dnd-native [items]="sp.competencies" 
+        [bag]='i ' 
+        (dndDrop)='onDndDrop($event)'
+        (dndDragOver)='onDndDragOver($event)'
+        (dndDragStart)='onDndDragStart($event)'
+        (dndDragLeave)='onDndDragLeave($event)'
+        (dndDragExit)='onDndDragExit($event)' ></app-dnd-native>
+    </div>
+
+    <a (click)='gotoRoot()'>Home</a>
+</div>
